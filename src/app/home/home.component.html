@@ -1,0 +1,22 @@
+<h2>{{ title }}</h2>
+<div class="row">
+  <form materialize class="col s8 offset-s2" [formGroup]="form" (ngSubmit)="submit()">
+    <div class="row">
+      <div class="input-field col s12">
+        <i class="material-icons prefix">email</i>
+        <input id="email" type="email" class="validate" placeholder="Email (Example: xyz@aol.com)"
+               [(ngModel)]="email" formControlName="email"
+               [class.invalid]="form.controls['email'].touched && !form.controls['email'].valid">
+        <label for="email"
+               [class.active]="email"
+               data-error="Invalid Email">
+          Email
+        </label>
+      </div>
+    </div>
+    <button class="btn-large waves-effect waves-light" type="submit"
+            [disabled]="!form.valid">
+      Subscriptions Detail<i class="material-icons right">send</i>
+    </button>
+  </form>
+</div>

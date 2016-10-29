@@ -1,0 +1,19 @@
+<h2>{{ title }}</h2>
+
+<h5>Email: {{ email }}</h5>
+
+<ul class="collection with-header">
+  <li class="collection-header"><h5>Subscriptions</h5></li>
+  <li class="collection-item" *ngFor="let subscription of subscriptions">
+    {{ subscription.offerName }} ${{ subscription.salePrice }} per month
+  </li>
+</ul>
+
+<ul class="collection with-header">
+  <li class="collection-header"><h5>Cards</h5></li>
+  <li class="collection-item" *ngFor="let card of cards">
+    {{ card.paymentType }} {{ card.lastFourDigits }}
+  </li>
+</ul>
+
+<button class="btn-large waves-effect waves-light" (click)="changeEmail()">Change Email</button>
